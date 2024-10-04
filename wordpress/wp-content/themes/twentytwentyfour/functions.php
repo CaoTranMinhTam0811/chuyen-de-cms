@@ -204,3 +204,11 @@ if ( ! function_exists( 'twentytwentyfour_pattern_categories' ) ) :
 endif;
 
 add_action( 'init', 'twentytwentyfour_pattern_categories' );
+
+// Them ma moi o day
+function enqueue_custom_footer_styles()
+{
+	// Đảm bảo đường dẫn chính xác đến file CSS trong theme
+	wp_enqueue_style('footer-css', get_template_directory_uri() . '/assets/css/footer.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_footer_styles');
